@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFIRAD | انفِراد - من الفكرة إلى اليقين</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #020617;
+            --secondary: #0f172a;
+            --accent: #00D4FF; 
+            --accent-soft: #64FFDA;
+            --text-main: #94a3b8;
+        }
+        body {
+            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        .font-en { font-family: 'Inter', sans-serif; }
+        
+        .blue-gradient {
+            background: linear-gradient(135deg, #00D4FF 0%, #64FFDA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Language Toggle Logic */
+        .en-content { display: none; }
+        .lang-en .en-content { display: inline; }
+        .lang-en div.en-content, .lang-en p.en-content, .lang-en section.en-content, .lang-en h1.en-content, .lang-en h2.en-content, .lang-en span.en-content { display: block; }
+        .lang-en .ar-content { display: none; }
+        .lang-en { direction: ltr; }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0, 212, 255, 0.2);
+        }
+
+        #lang-btn {
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: var(--accent);
+        }
+
+        /* GRID LOGO STYLE */
+        .logo-grid div {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background-color: var(--accent);
+        }
+        
+        /* Force phone number LTR */
+        .phone-number {
+            direction: ltr !important;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#020617]/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <!-- INFIRAD LOGO -->
+                <div class="flex items-center gap-3">
+                    <div class="logo-grid grid grid-cols-2 gap-1.5">
+                        <div class="bg-cyan-400"></div><div class="bg-cyan-600 opacity-40"></div>
+                        <div class="bg-cyan-500 opacity-70"></div><div class="bg-cyan-400"></div>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <!-- Arabic only in AR mode, English only in EN mode -->
+                        <span class="ar-content text-xl font-bold text-white tracking-wide">انفِراد</span>
+                        <span class="en-content font-en text-xl font-bold text-white tracking-widest uppercase">INFIRAD</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">
+                    <span class="ar-content">من نحن</span>
+                    <span class="en-content font-en">About Us</span>
+                </a>
+                <a href="#methodology" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">
+                    <span class="ar-content">منهجيتنا</span>
+                    <span class="en-content font-en">Methodology</span>
+                </a>
+                <a href="#capabilities" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">
+                    <span class="ar-content">القدرات</span>
+                    <span class="en-content font-en">Capabilities</span>
+                </a>
+                <a href="#engagement" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">
+                    <span class="ar-content">نموذج العمل</span>
+                    <span class="en-content font-en">Engagement</span>
+                </a>
+                
+                <button onclick="toggleLanguage()" id="lang-btn" class="flex items-center gap-2 px-4 py-2 rounded-lg transition-all">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span class="text-xs font-bold" id="lang-btn-text">English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Text Column -->
+            <div class="space-y-8">
+                <!-- 1. تفعيل تكبير الخط لشريك هندسي استراتيجي -->
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm md:text-base font-bold tracking-widest uppercase">
+                    <span class="ar-content">شريك هندسي استراتيجي لتطوير المشاريع</span>
+                    <span class="en-content font-en">Strategic Venture-Engineering Partner</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-white">
+                    <span class="ar-content">من الفكرة إلى <span class="blue-gradient">اليقين</span></span>
+                    <span class="en-content font-en">From Idea to <span class="blue-gradient">Certainty</span></span>
+                </h1>
+                
+                <p class="text-lg text-slate-400 max-w-xl leading-relaxed">
+                    <span class="ar-content">شركة تطوير مشاريع تعمل كشريك تقني لتحويل الأفكار النوعية إلى مشاريع قابلة للتنفيذ وجاهزة للاستثمار.</span>
+                    <span class="en-content font-en">A project development company operating as a strategic technical partner to transform flagship ideas into executable, investment-ready projects.</span>
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/966530151525" target="_blank" class="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded-lg transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span class="ar-content">واتساب</span>
+                        <span class="en-content font-en">WhatsApp</span>
+                    </a>
+                    <a href="mailto:info@infiradeng.com" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition-all flex items-center gap-2 border border-white/5">
+                        <i data-lucide="mail" class="w-5 h-5 text-cyan-400"></i>
+                        <span class="ar-content">البريد الإلكتروني</span>
+                        <span class="en-content font-en">Email Us</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Graphic Column (Top Square - Simulation Representation) -->
+            <div class="hidden lg:block relative">
+                <div class="relative bg-[#020617] ring-1 ring-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
+                    <div class="aspect-square bg-slate-900/40 rounded-lg flex flex-col items-center justify-center overflow-hidden border border-white/5 relative">
+                        <!-- Simulation Symbols -->
+                        <div class="ar-content absolute top-8 text-cyan-400/60 text-sm font-bold tracking-[0.2em] uppercase">المحاكاة والتحليل البياني</div>
+                        <div class="en-content font-en absolute top-8 text-cyan-400/60 text-sm font-bold tracking-[0.2em] uppercase">Simulation & Analytics</div>
+
+                        <!-- Technical Graph SVG -->
+                        <svg viewBox="0 0 200 200" class="w-3/4 h-3/4 text-cyan-500/20">
+                            <!-- Grid -->
+                            <path d="M40 40 H160 M40 70 H160 M40 100 H160 M40 130 H160 M40 160 H160" stroke="currentColor" stroke-width="0.2" />
+                            <path d="M40 40 V160 M70 40 V160 M100 40 V160 M130 40 V160 M160 40 V160" stroke="currentColor" stroke-width="0.2" />
+                            <!-- Simulation Wave -->
+                            <path d="M40 140 Q 70 60, 100 110 T 160 80" fill="none" stroke="currentColor" stroke-width="1.5" class="animate-pulse" />
+                            <!-- Data Nodes -->
+                            <circle cx="70" cy="85" r="3" fill="currentColor" />
+                            <circle cx="100" cy="110" r="3" fill="currentColor" />
+                            <circle cx="130" cy="95" r="3" fill="currentColor" />
+                        </svg>
+
+                        <!-- 2. تفعيل تكبير الخط داخل الصندوق (النمذجة الرقمية) -->
+                        <div class="ar-content absolute bottom-8 px-5 py-2 border border-cyan-500/20 rounded text-cyan-400 text-xs md:text-sm font-bold uppercase">النمذجة الرقمية</div>
+                        <div class="en-content font-en absolute bottom-8 px-5 py-2 border border-cyan-500/20 rounded text-cyan-400 text-xs md:text-sm font-bold uppercase">Digital Twin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#020617]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text on Right (In RTL) -->
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">
+                        <span class="ar-content">عن انفِراد</span>
+                        <span class="en-content font-en">About INFIRAD</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                        <span class="ar-content">تعمل انفِراد في تقاطع الهندسة والتكنولوجيا والأعمال، مع التركيز على المبادرات التي تتسم بعدم اليقين التقني وارتفاع مخاطر الأداء. نحن نؤمن بمبدأ واحد: يجب التحقق من القرارات قبل الالتزام برأس المال.</span>
+                        <span class="en-content font-en">INFIRAD operates at the intersection of engineering, technology, and business. We focus on initiatives where technical uncertainty and performance risks are high. We believe in one principle: decisions must be validated before capital is committed.</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-10">
+                        <div class="card p-6 bg-slate-900 rounded-xl border border-white/5">
+                            <h3 class="text-cyan-400 font-bold text-2xl mb-1">0%</h3>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 ar-content">تحيز للمقاولين</p>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 en-content font-en">Vendor Bias</p>
+                        </div>
+                        <div class="card p-6 bg-slate-900 rounded-xl border border-white/5">
+                            <h3 class="text-cyan-400 font-bold text-2xl mb-1">100%</h3>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 ar-content">استقلالية القرار</p>
+                            <p class="text-xs uppercase tracking-wider text-slate-500 en-content font-en">Decision Autonomy</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Graphic on Left (In RTL) -->
+                <div class="relative">
+                    <div class="aspect-video bg-gradient-to-br from-cyan-900/20 to-slate-900 rounded-2xl border border-white/10 flex items-center justify-center p-12">
+                         <div class="text-center">
+                            <i data-lucide="shield-check" class="w-16 h-16 text-cyan-400 mx-auto mb-4"></i>
+                            <h4 class="text-xl font-bold text-white uppercase tracking-widest ar-content">شريك هندسي استراتيجي</h4>
+                            <h4 class="text-xl font-bold text-white uppercase tracking-widest en-content font-en">Strategic  Technical Partner</h4>
+                            
+                            <!-- 3. تفعيل تكبير الخط الصندوق الثاني (تحقيق اليقين في المشاريع المعقدة) -->
+                            <p class="mt-4 text-sm md:text-base text-slate-400 ar-content tracking-widest">تحقيق اليقين في المشاريع النوعية</p>
+                            <p class="mt-4 text-sm md:text-base text-slate-400 en-content font-en tracking-widest">Building Certainty in Flagship Projects</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">
+                    <span class="ar-content">منهجية انفِراد</span>
+                    <span class="en-content font-en">INFIRAD Methodology</span>
+                </h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-0 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
+                <div class="p-10 bg-[#0f172a] border-l border-white/5">
+                    <span class="text-5xl font-bold text-white/5 font-en block mb-6">01</span>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        <span class="ar-content">التصور والتحقق</span>
+                        <span class="en-content font-en">Validation</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">تقييم السوق والجدوى، تعريف المفهوم الفني، وتحديد المخاطر المبكرة لضمان واقعية الفكرة.</span>
+                        <span class="en-content font-en">Market assessment, feasibility study, technical concept definition, and early risk identification.</span>
+                    </p>
+                </div>
+                <div class="p-10 bg-[#0f172a] border-l border-white/5">
+                    <span class="text-5xl font-bold text-white/5 font-en block mb-6">02</span>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        <span class="ar-content">المحاكاة والتحسين</span>
+                        <span class="en-content font-en">Simulation</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">هندسة ونمذجة الأنظمة، اختبار السيناريوهات، وتحليل المفاضلات القائمة على البيانات.</span>
+                        <span class="en-content font-en">Engineering and system modeling, scenario testing, and data-driven trade-off analysis.</span>
+                    </p>
+                </div>
+                <div class="p-10 bg-[#0f172a]">
+                    <span class="text-5xl font-bold text-white/5 font-en block mb-6">03</span>
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        <span class="ar-content">التطوير والتجهيز</span>
+                        <span class="en-content font-en">Preparation</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">تكامل التقنيات، إعداد خرائط طريق التنفيذ، وتجهيز الوثائق الجاهزة للاستثمار.</span>
+                        <span class="en-content font-en">Technology integration, implementation roadmaps, and creating investment-ready documentation.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="capabilities" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">
+                <span class="ar-content">منظومة القدرات المتكاملة</span>
+                <span class="en-content font-en">Integrated Capability Stack</span>
+            </h2>
+
+            <div class="grid lg:grid-cols-4 gap-6">
+                <!-- Capability 1 -->
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
+                    <i data-lucide="cog" class="w-8 h-8 text-cyan-400 mb-6"></i>
+                    <h3 class="text-lg font-bold text-white mb-4">
+                        <span class="ar-content">الهندسة</span>
+                        <span class="en-content font-en">Engineering</span>
+                    </h3>
+                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة (التصميم الأساسي...) -->
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">التصميم الأساسي (BFD/PFD)، مراجعة P&ID، والمحاكاة الديناميكية للعمليات.</span>
+                        <span class="en-content font-en">Front-end design (BFD/PFD), P&ID review, and dynamic process simulation.</span>
+                    </p>
+                </div>
+                <!-- Capability 2 -->
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
+                    <i data-lucide="cpu" class="w-8 h-8 text-cyan-400 mb-6"></i>
+                    <h3 class="text-lg font-bold text-white mb-4">
+                        <span class="ar-content">التقنية والذكاء الاصطناعي</span>
+                        <span class="en-content font-en">Tech & AI</span>
+                    </h3>
+                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة (وكلاء ذكاء اصطناعي...) -->
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">وكلاء ذكاء اصطناعي لدعم اتخاذ القرارات الهندسية، وتحليل البيانات لرفع الكفاءة.</span>
+                        <span class="en-content font-en">AI agents for engineering decision support and data analytics for performance.</span>
+                    </p>
+                </div>
+                <!-- Capability 3 -->
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
+                    <i data-lucide="briefcase" class="w-8 h-8 text-cyan-400 mb-6"></i>
+                    <h3 class="text-lg font-bold text-white mb-4">
+                        <span class="ar-content">تطوير الأعمال</span>
+                        <span class="en-content font-en">Venture Dev</span>
+                    </h3>
+                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة -->
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">هيكلة المشاريع، الحوكمة، ورفع الجاهزية الاستثمارية للأفكار المعقدة.</span>
+                        <span class="en-content font-en">Venture structuring, governance, and investment readiness for complex ideas.</span>
+                    </p>
+                </div>
+                <!-- Capability 4 -->
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
+                    <i data-lucide="graduation-cap" class="w-8 h-8 text-cyan-400 mb-6"></i>
+                    <h3 class="text-lg font-bold text-white mb-4">
+                        <span class="ar-content">التعليم ونقل المعرفة</span>
+                        <span class="en-content font-en">Education & Training</span>
+                    </h3>
+                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة -->
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">بناء الكفاءات الوطنية المتخصصة وتطوير المهارات التقنية في المجالات الهندسية المتقدمة.</span>
+                        <span class="en-content font-en">Building specialized national competencies and developing skills in advanced engineering.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Section -->
+    <section id="engagement" class="py-24 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto px-6">
+             <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    <span class="ar-content">نموذج الشراكة</span>
+                    <span class="en-content font-en">Engagement Model</span>
+                </h2>
+                <!-- 5. تفعيل تكبير الخط (نعمل وفق نموذجين مرنين يتناسبان مع احتياجات المشاريع الكبرى) -->
+                <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
+                    <span class="ar-content">نعمل وفق نموذجين مرنين يتناسبان مع احتياجات المشاريع الكبرى.</span>
+                    <span class="en-content font-en">Operating through two flexible modes tailored for high-impact projects.</span>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-10 bg-slate-900 border-l-4 border-cyan-500 rounded-xl">
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        <span class="ar-content">التعاقدات الاستشارية</span>
+                        <span class="en-content font-en">Consulting Engagements</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">دراسات فنية وتحليلية لدعم اتخاذ القرار، التحقق من الجدوى، وتقليل المخاطر.</span>
+                        <span class="en-content font-en">Targeted studies and analyses supporting critical decisions and risk reduction.</span>
+                    </p>
+                </div>
+                <div class="p-10 bg-slate-900 border-l-4 border-white/20 rounded-xl">
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        <span class="ar-content">شراكات التطوير الاستراتيجية</span>
+                        <span class="en-content font-en">Strategic Partnerships</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="ar-content">تعمل انفِراد كعمود فقري تقني لمشروعك من مرحلة التصور وحتى الجاهزية للتنفيذ.</span>
+                        <span class="en-content font-en">Selective, phased partnerships where INFIRAD acts as a technical backbone.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 border-t border-white/5 bg-[#020617]">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Footer Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="logo-grid grid grid-cols-2 gap-1.5">
+                        <div class="bg-cyan-400"></div><div class="bg-cyan-600 opacity-40"></div>
+                        <div class="bg-cyan-500 opacity-70"></div><div class="bg-cyan-400"></div>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="ar-content text-xl font-bold text-white tracking-wide">انفِراد</span>
+                        <span class="en-content font-en text-xl font-bold text-white tracking-widest uppercase">INFIRAD</span>
+                    </div>
+                </div>
+                
+                <!-- 6. تفعيل تكبير الخط في الأسفل (الشريك الهندسي الاستراتيجي...) -->
+                <p class="text-slate-400 text-base leading-relaxed max-w-sm">
+                    <span class="ar-content">الشريك الهندسي الاستراتيجي لتطوير المشاريع النوعية في المملكة العربية السعودية.</span>
+                    <span class="en-content font-en">The strategic technical partner for flagship project development in Saudi Arabia.</span>
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="text-white font-bold">
+                    <span class="ar-content">تواصل معنا</span>
+                    <span class="en-content font-en">Contact</span>
+                </h4>
+                <div class="space-y-3 text-slate-400 text-sm">
+                    <a href="mailto:info@infiradeng.com" class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i> info@infiradeng.com
+                    </a>
+                    <a href="https://wa.me/966530151525" target="_blank" class="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span class="phone-number">+966 530 151 525</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-white font-bold">
+                    <span class="ar-content">المقر</span>
+                    <span class="en-content font-en">Location</span>
+                </h4>
+                <p class="text-slate-400 text-sm">
+                    <span class="ar-content">الرياض، المملكة العربية السعودية</span>
+                    <span class="en-content font-en">Riyadh, Saudi Arabia</span>
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/5 text-center text-[10px] text-slate-700 uppercase tracking-widest font-en">
+            &copy; 2026 INFIRAD. From Idea to Certainty.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        let currentLang = 'ar';
+        const body = document.body;
+
+        function toggleLanguage() {
+            const btnText = document.getElementById('lang-btn-text');
+            if (currentLang === 'ar') {
+                body.classList.add('lang-en');
+                body.setAttribute('dir', 'ltr');
+                body.setAttribute('lang', 'en');
+                btnText.innerText = 'العربية';
+                currentLang = 'en';
+            } else {
+                body.classList.remove('lang-en');
+                body.setAttribute('dir', 'rtl');
+                body.setAttribute('lang', 'ar');
+                btnText.innerText = 'English';
+                currentLang = 'ar';
+            }
+        }
+    </script>
+</body>
+</html>
