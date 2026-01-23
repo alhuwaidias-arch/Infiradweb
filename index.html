@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFIRAD | انفِراد</title>
+    <title>INFIRAD | انفِراد - من الفكرة إلى اليقين</title>
+    
+    <!-- Favicon: INFIRAD Grid Logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='20' width='28' height='28' rx='4' fill='%2300D4FF'/%3E%3Crect x='52' y='20' width='28' height='28' rx='4' fill='%2300D4FF' fill-opacity='0.4'/%3E%3Crect x='20' y='52' width='28' height='28' rx='4' fill='%2300D4FF' fill-opacity='0.7'/%3E%3Crect x='52' y='52' width='28' height='28' rx='4' fill='%2300D4FF'/%3E%3C/svg%3E">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -60,24 +64,16 @@
             direction: ltr !important;
             display: inline-block;
         }
-        
-        svg { shape-rendering: geometricPrecision; }
 
-        /* Gemini-style Icon Button */
-        .gemini-icon-btn {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            transition: all 0.3s ease;
+        /* Hadi Chat Widget Custom Styles */
+        #hadi-chat-window {
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .gemini-icon-btn:hover {
-            background: rgba(0, 212, 255, 0.2);
-            transform: scale(1.1);
+        .chat-msg-in { animation: slideIn 0.3s ease-out forwards; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -94,7 +90,6 @@
                         <div class="bg-cyan-500 opacity-70"></div><div class="bg-cyan-400"></div>
                     </div>
                     <div class="flex flex-col leading-none">
-                        <!-- Arabic only in AR mode, English only in EN mode -->
                         <span class="ar-content text-xl font-bold text-white tracking-wide">انفِراد</span>
                         <span class="en-content font-en text-xl font-bold text-white tracking-widest uppercase">INFIRAD</span>
                     </div>
@@ -135,9 +130,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-            <!-- Text Column -->
             <div class="space-y-8">
-                <!-- 1. تفعيل تكبير الخط لشريك هندسي استراتيجي -->
                 <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm md:text-base font-bold tracking-widest uppercase">
                     <span class="ar-content">شريك هندسي استراتيجي لتطوير المشاريع</span>
                     <span class="en-content font-en">Strategic Venture-Engineering Partner</span>
@@ -167,28 +160,22 @@
                 </div>
             </div>
             
-            <!-- Graphic Column (Top Square - Simulation Representation) -->
+            <!-- Graphic Column -->
             <div class="hidden lg:block relative">
                 <div class="relative bg-[#020617] ring-1 ring-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
                     <div class="aspect-square bg-slate-900/40 rounded-lg flex flex-col items-center justify-center overflow-hidden border border-white/5 relative">
-                        <!-- Simulation Symbols -->
                         <div class="ar-content absolute top-8 text-cyan-400/60 text-sm font-bold tracking-[0.2em] uppercase">المحاكاة والتحليل البياني</div>
                         <div class="en-content font-en absolute top-8 text-cyan-400/60 text-sm font-bold tracking-[0.2em] uppercase">Simulation & Analytics</div>
 
-                        <!-- Technical Graph SVG -->
                         <svg viewBox="0 0 200 200" class="w-3/4 h-3/4 text-cyan-500/20">
-                            <!-- Grid -->
                             <path d="M40 40 H160 M40 70 H160 M40 100 H160 M40 130 H160 M40 160 H160" stroke="currentColor" stroke-width="0.2" />
                             <path d="M40 40 V160 M70 40 V160 M100 40 V160 M130 40 V160 M160 40 V160" stroke="currentColor" stroke-width="0.2" />
-                            <!-- Simulation Wave -->
                             <path d="M40 140 Q 70 60, 100 110 T 160 80" fill="none" stroke="currentColor" stroke-width="1.5" class="animate-pulse" />
-                            <!-- Data Nodes -->
                             <circle cx="70" cy="85" r="3" fill="currentColor" />
                             <circle cx="100" cy="110" r="3" fill="currentColor" />
                             <circle cx="130" cy="95" r="3" fill="currentColor" />
                         </svg>
 
-                        <!-- 2. تفعيل تكبير الخط داخل الصندوق (النمذجة الرقمية) -->
                         <div class="ar-content absolute bottom-8 px-5 py-2 border border-cyan-500/20 rounded text-cyan-400 text-xs md:text-sm font-bold uppercase">النمذجة الرقمية</div>
                         <div class="en-content font-en absolute bottom-8 px-5 py-2 border border-cyan-500/20 rounded text-cyan-400 text-xs md:text-sm font-bold uppercase">Digital Twin</div>
                     </div>
@@ -201,7 +188,6 @@
     <section id="about" class="py-24 bg-[#020617]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Text on Right (In RTL) -->
                 <div>
                     <h2 class="text-3xl font-bold text-white mb-6">
                         <span class="ar-content">عن انفِراد</span>
@@ -224,15 +210,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Graphic on Left (In RTL) -->
                 <div class="relative">
                     <div class="aspect-video bg-gradient-to-br from-cyan-900/20 to-slate-900 rounded-2xl border border-white/10 flex items-center justify-center p-12">
                          <div class="text-center">
                             <i data-lucide="shield-check" class="w-16 h-16 text-cyan-400 mx-auto mb-4"></i>
                             <h4 class="text-xl font-bold text-white uppercase tracking-widest ar-content">شريك هندسي استراتيجي</h4>
                             <h4 class="text-xl font-bold text-white uppercase tracking-widest en-content font-en">Strategic  Technical Partner</h4>
-                            
-                            <!-- 3. تفعيل تكبير الخط الصندوق الثاني (تحقيق اليقين في المشاريع المعقدة) -->
                             <p class="mt-4 text-sm md:text-base text-slate-400 ar-content tracking-widest">تحقيق اليقين في المشاريع النوعية</p>
                             <p class="mt-4 text-sm md:text-base text-slate-400 en-content font-en tracking-widest">Building Certainty in Flagship Projects</p>
                          </div>
@@ -300,53 +283,45 @@
             </h2>
 
             <div class="grid lg:grid-cols-4 gap-6">
-                <!-- Capability 1 -->
                 <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
                     <i data-lucide="cog" class="w-8 h-8 text-cyan-400 mb-6"></i>
                     <h3 class="text-lg font-bold text-white mb-4">
                         <span class="ar-content">الهندسة</span>
                         <span class="en-content font-en">Engineering</span>
                     </h3>
-                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة (التصميم الأساسي...) -->
                     <p class="text-slate-400 text-sm leading-relaxed">
                         <span class="ar-content">التصميم الأساسي (BFD/PFD)، مراجعة P&ID، والمحاكاة الديناميكية للعمليات.</span>
                         <span class="en-content font-en">Front-end design (BFD/PFD), P&ID review, and dynamic process simulation.</span>
                     </p>
                 </div>
-                <!-- Capability 2 -->
                 <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
                     <i data-lucide="cpu" class="w-8 h-8 text-cyan-400 mb-6"></i>
                     <h3 class="text-lg font-bold text-white mb-4">
                         <span class="ar-content">التقنية والذكاء الاصطناعي</span>
                         <span class="en-content font-en">Tech & AI</span>
                     </h3>
-                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة (وكلاء ذكاء اصطناعي...) -->
                     <p class="text-slate-400 text-sm leading-relaxed">
                         <span class="ar-content">وكلاء ذكاء اصطناعي لدعم اتخاذ القرارات الهندسية، وتحليل البيانات لرفع الكفاءة.</span>
                         <span class="en-content font-en">AI agents for engineering decision support and data analytics for performance.</span>
                     </p>
                 </div>
-                <!-- Capability 3 -->
                 <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
                     <i data-lucide="briefcase" class="w-8 h-8 text-cyan-400 mb-6"></i>
                     <h3 class="text-lg font-bold text-white mb-4">
                         <span class="ar-content">تطوير الأعمال</span>
                         <span class="en-content font-en">Venture Dev</span>
                     </h3>
-                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة -->
                     <p class="text-slate-400 text-sm leading-relaxed">
                         <span class="ar-content">هيكلة المشاريع، الحوكمة، ورفع الجاهزية الاستثمارية للأفكار المعقدة.</span>
                         <span class="en-content font-en">Venture structuring, governance, and investment readiness for complex ideas.</span>
                     </p>
                 </div>
-                <!-- Capability 4 -->
                 <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover transition-all">
                     <i data-lucide="graduation-cap" class="w-8 h-8 text-cyan-400 mb-6"></i>
                     <h3 class="text-lg font-bold text-white mb-4">
                         <span class="ar-content">التعليم ونقل المعرفة</span>
                         <span class="en-content font-en">Education & Training</span>
                     </h3>
-                    <!-- 4. تفعيل تكبير الوصف داخل المنظومة -->
                     <p class="text-slate-400 text-sm leading-relaxed">
                         <span class="ar-content">بناء الكفاءات الوطنية المتخصصة وتطوير المهارات التقنية في المجالات الهندسية المتقدمة.</span>
                         <span class="en-content font-en">Building specialized national competencies and developing skills in advanced engineering.</span>
@@ -364,7 +339,6 @@
                     <span class="ar-content">نموذج الشراكة</span>
                     <span class="en-content font-en">Engagement Model</span>
                 </h2>
-                <!-- 5. تفعيل تكبير الخط (نعمل وفق نموذجين مرنين يتناسبان مع احتياجات المشاريع الكبرى) -->
                 <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
                     <span class="ar-content">نعمل وفق نموذجين مرنين يتناسبان مع احتياجات المشاريع الكبرى.</span>
                     <span class="en-content font-en">Operating through two flexible modes tailored for high-impact projects.</span>
@@ -400,7 +374,6 @@
     <footer id="contact" class="py-20 border-t border-white/5 bg-[#020617]">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div class="lg:col-span-2 space-y-6">
-                <!-- Footer Logo -->
                 <div class="flex items-center gap-3">
                     <div class="logo-grid grid grid-cols-2 gap-1.5">
                         <div class="bg-cyan-400"></div><div class="bg-cyan-600 opacity-40"></div>
@@ -412,7 +385,6 @@
                     </div>
                 </div>
                 
-                <!-- 6. تفعيل تكبير الخط في الأسفل (الشريك الهندسي الاستراتيجي...) -->
                 <p class="text-slate-400 text-base leading-relaxed max-w-sm">
                     <span class="ar-content">الشريك الهندسي الاستراتيجي لتطوير المشاريع النوعية في المملكة العربية السعودية.</span>
                     <span class="en-content font-en">The strategic technical partner for flagship project development in Saudi Arabia.</span>
@@ -451,6 +423,55 @@
         </div>
     </footer>
 
+    <!-- Hadi Chat Widget Integration -->
+    <div id="hadi-chat-widget" class="fixed bottom-6 right-6 z-[100] font-sans">
+        <!-- Chat Toggle Button -->
+        <button onclick="toggleHadiChat()" class="w-14 h-14 bg-cyan-500 rounded-full shadow-2xl flex items-center justify-center text-white hover:scale-110 transition-all active:scale-95">
+            <i data-lucide="message-square" id="chat-icon"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="hadi-chat-window" class="hidden absolute bottom-20 right-0 w-80 md:w-96 bg-slate-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-cyan-600 p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-white">س</div>
+                    <div class="leading-tight">
+                        <p class="text-xs font-bold text-white">
+                            <span class="ar-content">هادي | انفِراد</span>
+                            <span class="en-content font-en">Hadi | INFIRAD</span>
+                        </p>
+                        <p class="text-[10px] text-cyan-100 opacity-80">
+                            <span class="ar-content">مرحباً بك في عالم اليقين</span>
+                            <span class="en-content font-en">Welcome to the world of certainty</span>
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleHadiChat()" class="text-white opacity-60 hover:opacity-100 transition-opacity">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="hadi-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-[#020617] terminal-scroll">
+                <div class="chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]">
+                    <span class="ar-content">أهلاً بك. أنا "هادي"، وكيل التواصل الذكي لشركة انفِراد. هل تبحث عن شريك تقني لمشروعك القادم؟</span>
+                    <span class="en-content font-en">Hello. I am "Hadi", INFIRAD's smart communication agent. Are you looking for a technical partner for your next project?</span>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 bg-slate-900 border-t border-white/5 flex gap-2">
+                <input type="text" id="hadi-user-msg" 
+                    placeholder="اكتب استفسارك هنا..." 
+                    class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs text-white outline-none focus:border-cyan-500 transition-colors">
+                <button onclick="sendToHadi()" class="bg-cyan-500 text-slate-900 p-2 rounded-xl hover:bg-cyan-400 transition-colors">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
 
@@ -459,23 +480,120 @@
 
         function toggleLanguage() {
             const btnText = document.getElementById('lang-btn-text');
+            const chatInput = document.getElementById('hadi-user-msg');
+
             if (currentLang === 'ar') {
                 body.classList.add('lang-en');
                 body.setAttribute('dir', 'ltr');
                 body.setAttribute('lang', 'en');
                 btnText.innerText = 'العربية';
+                chatInput.placeholder = "Type your query here...";
                 currentLang = 'en';
             } else {
                 body.classList.remove('lang-en');
                 body.setAttribute('dir', 'rtl');
                 body.setAttribute('lang', 'ar');
                 btnText.innerText = 'English';
+                chatInput.placeholder = "اكتب استفسارك هنا...";
                 currentLang = 'ar';
             }
         }
+
+        // Hadi Chat Logic
+        function toggleHadiChat() {
+            const win = document.getElementById('hadi-chat-window');
+            win.classList.toggle('hidden');
+        }
+
+        
+        // Hadi Chat Logic
+        const HADI_WEBHOOK_URL = "https://infirad.app.n8n.cloud/webhook-test/Hadi"; // <-- replace with your n8n webhook URL
+
+        function getHadiSessionId() {
+            try {
+                const key = "hadi_session_id";
+                let sid = localStorage.getItem(key);
+                if (!sid) {
+                    sid = (crypto && crypto.randomUUID) ? crypto.randomUUID() : ("hadi_" + Math.random().toString(16).slice(2) + Date.now());
+                    localStorage.setItem(key, sid);
+                }
+                return sid;
+            } catch (e) {
+                return ("hadi_" + Math.random().toString(16).slice(2) + Date.now());
+            }
+        }
+
+        async function sendToHadi() {
+            const input = document.getElementById('hadi-user-msg');
+            const msg = input.value.trim();
+            if(!msg) return;
+
+            const msgArea = document.getElementById('hadi-chat-messages');
+
+            // User Message
+            const userMsgDiv = document.createElement('div');
+            userMsgDiv.className = 'flex justify-end chat-msg-in';
+            userMsgDiv.innerHTML = `<div class="bg-cyan-600 p-3 rounded-2xl rounded-tl-none text-xs text-white max-w-[85%]">${msg}</div>`;
+            msgArea.appendChild(userMsgDiv);
+
+            input.value = '';
+            msgArea.scrollTop = msgArea.scrollHeight;
+
+            // Hadi "Typing"
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%] animate-pulse';
+            typingDiv.id = 'hadi-typing';
+            typingDiv.innerText = currentLang === 'ar' ? 'جاري التحليل...' : 'Analyzing...';
+            msgArea.appendChild(typingDiv);
+            msgArea.scrollTop = msgArea.scrollHeight;
+
+            try {
+                const payload = {
+                    session_id: getHadiSessionId(),
+                    message: msg,
+                    language: currentLang,
+                    page: window.location.href,
+                    ts: new Date().toISOString()
+                };
+
+                const res = await fetch(HADI_WEBHOOK_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+
+                const typing = document.getElementById('hadi-typing');
+                if (typing) typing.remove();
+
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]';
+                responseDiv.innerText = (data && data.reply) ? data.reply : (currentLang === 'ar' ? 'تم استلام رسالتك. هل يمكن توضيح المزيد؟' : 'Message received. Could you please clarify a bit more?');
+                msgArea.appendChild(responseDiv);
+                msgArea.scrollTop = msgArea.scrollHeight;
+
+            } catch (err) {
+                const typing = document.getElementById('hadi-typing');
+                if (typing) typing.remove();
+
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]';
+                responseDiv.innerText = currentLang === 'ar'
+                    ? 'تعذر الاتصال حالياً. فضلاً جرّب مرة أخرى، أو تواصل معنا عبر البريد info@infiradeng.com.'
+                    : 'Unable to connect right now. Please try again, or email us at info@infiradeng.com.';
+                msgArea.appendChild(responseDiv);
+                msgArea.scrollTop = msgArea.scrollHeight;
+            }
+        }
+
+        // Handle Enter Key for Chat
+
+        document.getElementById('hadi-user-msg').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendToHadi();
+            }
+        });
     </script>
 </body>
-
 </html>
-
-
