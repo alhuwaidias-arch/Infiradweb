@@ -541,7 +541,16 @@
                 responseDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]';
                 
                 // نفترض أن الرد يأتي في حقل باسم output أو text أو message
-                const hadiResponse = data.output || data.text || data.message || (currentLang === 'ar' ? 'تم استلام طلبك، شكراً لك.' : 'Request received, thank you.');
+                const hadiResponse =
+                data.reply ||
+                data.data?.reply ||
+                data.output_text ||
+                data.output ||
+                data.text ||
+                data.message ||
+                (currentLang === 'ar'
+                ? 'تم استلام طلبك، شكراً لك.'
+                : 'Request received, thank you.');
                 responseDiv.innerText = hadiResponse;
                 
                 msgArea.appendChild(responseDiv);
@@ -568,6 +577,7 @@
     </script>
 </body>
 </html>
+
 
 
 
