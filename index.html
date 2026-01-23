@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFIRAD | انفِراد - من الفكرة إلى اليقين</title>
     
-    <!-- Favicon: INFIRAD Grid Logo -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='20' width='28' height='28' rx='4' fill='%2300D4FF'/%3E%3Crect x='52' y='20' width='28' height='28' rx='4' fill='%2300D4FF' fill-opacity='0.4'/%3E%3Crect x='20' y='52' width='28' height='28' rx='4' fill='%2300D4FF' fill-opacity='0.7'/%3E%3Crect x='52' y='52' width='28' height='28' rx='4' fill='%2300D4FF'/%3E%3C/svg%3E">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -75,15 +74,16 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .terminal-scroll::-webkit-scrollbar { width: 4px; }
+        .terminal-scroll::-webkit-scrollbar-track { background: transparent; }
+        .terminal-scroll::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.2); border-radius: 10px; }
     </style>
 </head>
 <body class="selection:bg-cyan-500 selection:text-white">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-[#020617]/90 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <!-- INFIRAD LOGO -->
                 <div class="flex items-center gap-3">
                     <div class="logo-grid grid grid-cols-2 gap-1.5">
                         <div class="bg-cyan-400"></div><div class="bg-cyan-600 opacity-40"></div>
@@ -122,7 +122,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]"></div>
@@ -160,7 +159,6 @@
                 </div>
             </div>
             
-            <!-- Graphic Column -->
             <div class="hidden lg:block relative">
                 <div class="relative bg-[#020617] ring-1 ring-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
                     <div class="aspect-square bg-slate-900/40 rounded-lg flex flex-col items-center justify-center overflow-hidden border border-white/5 relative">
@@ -184,7 +182,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-24 bg-[#020617]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -225,7 +222,6 @@
         </div>
     </section>
 
-    <!-- Methodology -->
     <section id="methodology" class="py-24 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -274,7 +270,6 @@
         </div>
     </section>
 
-    <!-- Capabilities -->
     <section id="capabilities" class="py-24">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-16 text-white">
@@ -331,7 +326,6 @@
         </div>
     </section>
 
-    <!-- Engagement Section -->
     <section id="engagement" class="py-24 bg-slate-900/20">
         <div class="max-w-7xl mx-auto px-6">
              <div class="text-center mb-16">
@@ -370,7 +364,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="py-20 border-t border-white/5 bg-[#020617]">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div class="lg:col-span-2 space-y-6">
@@ -423,16 +416,12 @@
         </div>
     </footer>
 
-    <!-- Hadi Chat Widget Integration -->
     <div id="hadi-chat-widget" class="fixed bottom-6 right-6 z-[100] font-sans">
-        <!-- Chat Toggle Button -->
         <button onclick="toggleHadiChat()" class="w-14 h-14 bg-cyan-500 rounded-full shadow-2xl flex items-center justify-center text-white hover:scale-110 transition-all active:scale-95">
             <i data-lucide="message-square" id="chat-icon"></i>
         </button>
 
-        <!-- Chat Window -->
         <div id="hadi-chat-window" class="hidden absolute bottom-20 right-0 w-80 md:w-96 bg-slate-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[500px]">
-            <!-- Header -->
             <div class="bg-cyan-600 p-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-white">س</div>
@@ -452,7 +441,6 @@
                 </button>
             </div>
 
-            <!-- Messages Area -->
             <div id="hadi-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-[#020617] terminal-scroll">
                 <div class="chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]">
                     <span class="ar-content">أهلاً بك. أنا "هادي"، وكيل التواصل الذكي لشركة انفِراد. هل تبحث عن شريك تقني لمشروعك القادم؟</span>
@@ -460,7 +448,6 @@
                 </div>
             </div>
 
-            <!-- Input Area -->
             <div class="p-4 bg-slate-900 border-t border-white/5 flex gap-2">
                 <input type="text" id="hadi-user-msg" 
                     placeholder="اكتب استفسارك هنا..." 
@@ -505,90 +492,74 @@
             win.classList.toggle('hidden');
         }
 
-        
-        // Hadi Chat Logic
-        const HADI_WEBHOOK_URL = "https://infirad.app.n8n.cloud/webhook-test/Hadi"; // <-- replace with your n8n webhook URL
-
-        function getHadiSessionId() {
-            try {
-                const key = "hadi_session_id";
-                let sid = localStorage.getItem(key);
-                if (!sid) {
-                    sid = (crypto && crypto.randomUUID) ? crypto.randomUUID() : ("hadi_" + Math.random().toString(16).slice(2) + Date.now());
-                    localStorage.setItem(key, sid);
-                }
-                return sid;
-            } catch (e) {
-                return ("hadi_" + Math.random().toString(16).slice(2) + Date.now());
-            }
-        }
-
+        // --- المربوط بـ n8n الوظيفة المحدثة لـ هادي ---
         async function sendToHadi() {
             const input = document.getElementById('hadi-user-msg');
             const msg = input.value.trim();
             if(!msg) return;
 
             const msgArea = document.getElementById('hadi-chat-messages');
-
-            // User Message
+            
+            // 1. عرض رسالة المستخدم
             const userMsgDiv = document.createElement('div');
             userMsgDiv.className = 'flex justify-end chat-msg-in';
             userMsgDiv.innerHTML = `<div class="bg-cyan-600 p-3 rounded-2xl rounded-tl-none text-xs text-white max-w-[85%]">${msg}</div>`;
             msgArea.appendChild(userMsgDiv);
-
+            
             input.value = '';
             msgArea.scrollTop = msgArea.scrollHeight;
 
-            // Hadi "Typing"
+            // 2. إظهار حالة "هادي يفكر"
             const typingDiv = document.createElement('div');
             typingDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%] animate-pulse';
             typingDiv.id = 'hadi-typing';
-            typingDiv.innerText = currentLang === 'ar' ? 'جاري التحليل...' : 'Analyzing...';
+            typingDiv.innerText = currentLang === 'ar' ? 'جاري التحليل من قبل هادي...' : 'Hadi is analyzing...';
             msgArea.appendChild(typingDiv);
             msgArea.scrollTop = msgArea.scrollHeight;
 
             try {
-                const payload = {
-                    session_id: getHadiSessionId(),
-                    message: msg,
-                    language: currentLang,
-                    page: window.location.href,
-                    ts: new Date().toISOString()
-                };
-
-                const res = await fetch(HADI_WEBHOOK_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
+                // 3. الاتصال بـ n8n Webhook
+                const response = await fetch('https://infirad.app.n8n.cloud/webhook/hadi-chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        message: msg,
+                        language: currentLang,
+                        source: 'website_chat'
+                    })
                 });
 
-                const data = await res.json();
+                if (!response.ok) throw new Error('Network Error');
 
-                const typing = document.getElementById('hadi-typing');
-                if (typing) typing.remove();
+                const data = await response.json();
+                
+                // إزالة مؤشر الكتابة
+                document.getElementById('hadi-typing')?.remove();
 
+                // 4. عرض رد هادي القادم من n8n
                 const responseDiv = document.createElement('div');
                 responseDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]';
-                responseDiv.innerText = (data && data.reply) ? data.reply : (currentLang === 'ar' ? 'تم استلام رسالتك. هل يمكن توضيح المزيد؟' : 'Message received. Could you please clarify a bit more?');
+                
+                // نفترض أن الرد يأتي في حقل باسم output أو text أو message
+                const hadiResponse = data.output || data.text || data.message || (currentLang === 'ar' ? 'تم استلام طلبك، شكراً لك.' : 'Request received, thank you.');
+                responseDiv.innerText = hadiResponse;
+                
                 msgArea.appendChild(responseDiv);
                 msgArea.scrollTop = msgArea.scrollHeight;
 
-            } catch (err) {
-                const typing = document.getElementById('hadi-typing');
-                if (typing) typing.remove();
-
-                const responseDiv = document.createElement('div');
-                responseDiv.className = 'chat-msg-in bg-slate-800 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 max-w-[85%]';
-                responseDiv.innerText = currentLang === 'ar'
-                    ? 'تعذر الاتصال حالياً. فضلاً جرّب مرة أخرى، أو تواصل معنا عبر البريد info@infiradeng.com.'
-                    : 'Unable to connect right now. Please try again, or email us at info@infiradeng.com.';
-                msgArea.appendChild(responseDiv);
+            } catch (error) {
+                console.error('Hadi Connection Error:', error);
+                document.getElementById('hadi-typing')?.remove();
+                
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'chat-msg-in bg-red-900/20 p-3 rounded-2xl text-xs text-red-400 max-w-[85%]';
+                errorDiv.innerText = currentLang === 'ar' ? 'عذراً، واجه هادي مشكلة في الاتصال.' : 'Sorry, Hadi is having connection issues.';
+                msgArea.appendChild(errorDiv);
                 msgArea.scrollTop = msgArea.scrollHeight;
             }
         }
 
         // Handle Enter Key for Chat
-
         document.getElementById('hadi-user-msg').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 sendToHadi();
