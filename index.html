@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         :root {
             --primary: #020617;
@@ -464,6 +465,15 @@
 
         let currentLang = 'ar';
         const body = document.body;
+        // ================================
+        // Hadi Session Management
+        // ================================
+        let hadiSessionId = localStorage.getItem('hadi_session_id');
+
+        if (!hadiSessionId) {
+        hadiSessionId = 'hadi_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+        localStorage.setItem('hadi_session_id', hadiSessionId);
+        }
 
         function toggleLanguage() {
             const btnText = document.getElementById('lang-btn-text');
@@ -525,6 +535,7 @@
                     body: JSON.stringify({ 
                         message: msg,
                         language: currentLang,
+                        session_id: hadiSessionId,
                         source: 'website_chat'
                     })
                 });
@@ -577,6 +588,7 @@
     </script>
 </body>
 </html>
+
 
 
 
